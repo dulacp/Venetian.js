@@ -2,6 +2,8 @@
 **Venetian blind-like banner made of rolling stripes animated with CSS3 3D transforms**
 *The development of this plugin was made at [Uplight](http://uplig.ht)*
 
+![Screenshot of the demo](screenshots/example.png)
+
 ## Demo
 
 [**Try the demo project**](http://dulaccc.github.com/Venetian.js)
@@ -49,6 +51,11 @@ $ uglifyjs venetian.js -cm --lint -o venetian.min.js
 
 * Improve the way we set a stripe background image, the plugin should take care of the `background-position` not the user.
 * Reverse the animation with a `previous` method
+
+## Contact
+
+[Pierre Dulac](http://github.com/dulaccc)  
+[@dulaccc](https://twitter.com/dulaccc)
 
 ## License
 
