@@ -1,5 +1,5 @@
 # Venetian.js
-**Venetian blind-like banner made of rolling stripes animated with CSS3 3D transforms**
+**jQuery plugin for venetian blind-like banner made of rolling stripes animated with CSS3 3D transforms**
 *The development of this plugin was made at [Uplight](http://uplig.ht)*
 
 ![Screenshot of the demo](screenshots/example.png)
@@ -31,11 +31,11 @@
     ```
 
 3. Copy of the following files to your project :
-    * [`jquery.venetian.min.js`](http://raw.github.com/dulaccc/Venetian.js/master/venetian.js.min.js) 
+    * [`jquery.venetian.min.js`](http://raw.github.com/dulaccc/Venetian.js/blob/master/venetian.js.min.js) 
     * `stripes.css` the one you've just generated or the one by default
-    * [`photon.min.js`](https://raw.github.com/thomasxiii/photon/master/js/photon.min.js) *optional* but recommanded
+    * [`photon.min.js`](https://raw.github.com/thomasxiii/photon/blob/master/js/photon.min.js) *optional* but recommanded
 
-4. Check out the [example/index.html](http://github.com/dulaccc/Venetian.js/master/example/index.html) file to see how to initialize the module in your project and load some data in the stripes.
+4. Check out the [example/index.html](http://github.com/dulaccc/Venetian.js/blob/master/example/index.html) file to see how to initialize the module in your project and load some data in the stripes.
 
 ## Minified version
 
