@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 40px;
+
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #333;
+}
+.container {
+    margin-bottom: 40px;
+}
+.actions {
+    padding: 0 40px;
+}
+h1 {
+    color: #fff;
+    font-size: 50px;
+    padding-left: 40px;
+}
+a {
+    color: #888;
+    text-decoration: none;
+}
+button {
+    background: #666;
+    color: #ccc;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    padding: 20px;
+}
+button:hover {
+    background: #444;
+}
+button:active {
+    background: #222; 
+}
+
+footer {
+    color: #666;
+    margin-top: 50px;
+    padding-left: 40px;
+}
+
+
+/** Little styling for the stripes **/
+
+.stripe__face__inner {
+    padding: 0 40px;
+}
+.stripe__face {
+    background: #fea219;
+}
+.stripe-space:nth-child(n+2) .stripe__face {
+    background: #ffad1d;
+}
+.stripe-space:nth-child(n+3) .stripe__face {
+    background: #ffba1f;
+}
+.stripe-space:nth-child(n+4) .stripe__face {
+    background: #ffc523;
+}
+.stripe-space:nth-child(n+5) .stripe__face {
+    background: #ffcf31;
+} 
+.stripe-space:nth-child(n+6) .stripe__face {
+    background: #feda3e;
+} 

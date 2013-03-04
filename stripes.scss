@@ -1,0 +1,105 @@
+/**
+ * Some variables to control the size of the stripes
+ *
+ * NB: the CSS3D style depends on the size of those stripes
+ *     so don't mess up and remember to put an extra <div> inside 
+ *     the `.stripe__face` element in order to garantee a good 
+ *     3D transform
+ */
+$stripe-height:         90px!default;
+$stripe-border-width:   0px!default;
+$stripe-shadow-size:    2px!default;
+
+
+/** 
+ * Compute geometry values 
+ */
+
+// the gravity center of the 3D shape
+// and the formula is  z = 1/3 * sqrt( $stripe-height**2 - ($stripe-height/2)**2 )
+$stripe-gravity-z: -1.732 * $stripe-height / 6; 
+
+// translation vector against z-axis for top and bottom faces
+// and the formula is  z = sqrt( ($stripe-height/2)**2 - ($stripe-height/4)**2 )
+$stripe-face-z: 1.732 * $stripe-height / 4; 
+
+// translation vector against y-axis
+$stripe-face-y: $stripe-height / 4; 
+
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ * (taken from the inuit.css project)
+ * 
+   `@include vendor(border-radius, 4px);`
+ * 
+ */
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
+
+
+/**
+ * Bare minimal CSS3D stuff to make the animation works
+ */
+.stripe-space {
+    background: #ccc;
+    left: 0%;
+    width: 100%;
+    height: $stripe-height;
+    position: relative;
+    margin: 0 auto 0px;
+
+    @include vendor(perspective, 100000px);  // a far far away perspective point
+}
+
+.stripe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include vendor(transform-style, preserve-3d);
+    @include vendor(transition, ease 1s);
+    @include vendor(transform-origin, 50% 50% $stripe-gravity-z);
+    @include vendor(transform, translateZ( 0px ));
+}
+
+.stripe__face {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: $stripe-height - 2*$stripe-border-width;
+    
+    // border-bottom: $stripe-border-width solid #d18d27;
+    // border-top: 2px solid #fac750;
+    box-shadow: inset 0px (-$stripe-shadow-size) 0px rgba(0,0,0,0.2), inset 0px ($stripe-shadow-size) 0px rgba(255,255,255,0.2);
+
+    line-height: $stripe-height - 2*$stripe-border-width;
+    font-size: 3/5 * $stripe-height;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.stripe__face--front  {
+    @include vendor(transform, translateZ( 0px ));
+}
+.stripe__face--top {
+    @include vendor(transform, rotateX( 120deg ) translateZ( $stripe-face-z ) translateY( -$stripe-face-y ));
+}
+.stripe__face--bottom {
+    @include vendor(transform, rotateX( -120deg ) translateZ( $stripe-face-z ) translateY( $stripe-face-y ));
+}
+
+.stripe.show-front {
+    @include vendor(transform, rotateX( 0deg ));
+}
+.stripe.show-top {
+    @include vendor(transform, rotateX( -120deg ));
+}
+.stripe.show-bottom {
+    @include vendor(transform, rotateX( -240deg )); 
+}

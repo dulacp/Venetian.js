@@ -1,0 +1,178 @@
+/**
+ * Just compile a basic design with the rolling sprites css
+ */
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #333; }
+
+.container {
+  margin-bottom: 40px; }
+
+.actions {
+  padding: 0 40px; }
+
+h1 {
+  color: #fff;
+  font-size: 50px;
+  padding-left: 40px; }
+
+a {
+  color: #888;
+  text-decoration: none; }
+
+button {
+  background: #666;
+  color: #ccc;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  padding: 20px; }
+
+button:hover {
+  background: #444; }
+
+button:active {
+  background: #222; }
+
+footer {
+  color: #666;
+  margin-top: 50px;
+  padding-left: 40px; }
+
+/** Little styling for the stripes **/
+.stripe__face__inner {
+  padding: 0 40px; }
+
+.stripe__face {
+  background: #fea219; }
+
+.stripe-space:nth-child(n+2) .stripe__face {
+  background: #ffad1d; }
+
+.stripe-space:nth-child(n+3) .stripe__face {
+  background: #ffba1f; }
+
+.stripe-space:nth-child(n+4) .stripe__face {
+  background: #ffc523; }
+
+.stripe-space:nth-child(n+5) .stripe__face {
+  background: #ffcf31; }
+
+.stripe-space:nth-child(n+6) .stripe__face {
+  background: #feda3e; }
+
+/**
+ * Some variables to control the size of the stripes
+ *
+ * NB: the CSS3D style depends on the size of those stripes
+ *     so don't mess up and remember to put an extra <div> inside 
+ *     the `.stripe__face` element in order to garantee a good 
+ *     3D transform
+ */
+/** 
+ * Compute geometry values 
+ */
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ * (taken from the inuit.css project)
+ * 
+   `@include vendor(border-radius, 4px);`
+ * 
+ */
+/**
+ * Bare minimal CSS3D stuff to make the animation works
+ */
+.stripe-space {
+  background: #ccc;
+  left: 0%;
+  width: 100%;
+  height: 90px;
+  position: relative;
+  margin: 0 auto 0px;
+  -webkit-perspective: 100000px;
+  -moz-perspective: 100000px;
+  -ms-perspective: 100000px;
+  -o-perspective: 100000px;
+  perspective: 100000px; }
+
+.stripe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: ease 1s;
+  -moz-transition: ease 1s;
+  -ms-transition: ease 1s;
+  -o-transition: ease 1s;
+  transition: ease 1s;
+  -webkit-transform-origin: 50% 50% -25.98px;
+  -moz-transform-origin: 50% 50% -25.98px;
+  -ms-transform-origin: 50% 50% -25.98px;
+  -o-transform-origin: 50% 50% -25.98px;
+  transform-origin: 50% 50% -25.98px;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px); }
+
+.stripe__face {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.2), inset 0px 2px 0px rgba(255, 255, 255, 0.2);
+  line-height: 90px;
+  font-size: 54px;
+  font-weight: bold;
+  color: white;
+  margin: 0; }
+
+.stripe__face--front {
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px); }
+
+.stripe__face--top {
+  -webkit-transform: rotateX(120deg) translateZ(38.97px) translateY(-22.5px);
+  -moz-transform: rotateX(120deg) translateZ(38.97px) translateY(-22.5px);
+  -ms-transform: rotateX(120deg) translateZ(38.97px) translateY(-22.5px);
+  -o-transform: rotateX(120deg) translateZ(38.97px) translateY(-22.5px);
+  transform: rotateX(120deg) translateZ(38.97px) translateY(-22.5px); }
+
+.stripe__face--bottom {
+  -webkit-transform: rotateX(-120deg) translateZ(38.97px) translateY(22.5px);
+  -moz-transform: rotateX(-120deg) translateZ(38.97px) translateY(22.5px);
+  -ms-transform: rotateX(-120deg) translateZ(38.97px) translateY(22.5px);
+  -o-transform: rotateX(-120deg) translateZ(38.97px) translateY(22.5px);
+  transform: rotateX(-120deg) translateZ(38.97px) translateY(22.5px); }
+
+.stripe.show-front {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  transform: rotateX(0deg); }
+
+.stripe.show-top {
+  -webkit-transform: rotateX(-120deg);
+  -moz-transform: rotateX(-120deg);
+  -ms-transform: rotateX(-120deg);
+  -o-transform: rotateX(-120deg);
+  transform: rotateX(-120deg); }
+
+.stripe.show-bottom {
+  -webkit-transform: rotateX(-240deg);
+  -moz-transform: rotateX(-240deg);
+  -ms-transform: rotateX(-240deg);
+  -o-transform: rotateX(-240deg);
+  transform: rotateX(-240deg); }
