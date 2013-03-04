@@ -6,7 +6,7 @@
 
 ## Demo
 
-[**Try the demo project**](http://dulaccc.github.com/Venetian.js)
+[**Try the demo project**](http://dulaccc.github.com/Venetian.js/example/)
 
 ## Usage
 
