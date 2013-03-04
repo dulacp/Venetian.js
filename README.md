@@ -1,5 +1,5 @@
 # Venetian.js
-**jQuery plugin for venetian blind-like banner made of rolling stripes animated with CSS3 3D transforms**
+**jQuery plugin for venetian blind-like banner made of rolling stripes animated with CSS3 3D transforms**  
 *The development of this plugin was made at [Uplight](http://uplig.ht)*
 
 ![Screenshot of the demo](screenshots/example.gif)
